@@ -1,0 +1,424 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.body2{
+    display: flex; 
+    justify-content: center; 
+    background-color: #77b9ed; 
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    
+}
+
+
+
+
+.navigation{
+    position: fixed;
+    z-index: 9999;
+    display: flex;
+    justify-content: space-between;
+    background-color: #345167;
+    border-radius: 15px;
+    width: 77.5%;
+    gap: 2%;
+    padding: 15px;
+}
+
+
+
+.links{
+    color: rgb(255, 255, 255);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+
+.links:hover{
+    background-color: #77b9ed;
+    border-radius: 15px;
+    color: black;
+}
+
+.vlinks{
+    color: black;
+    background-color: #77b9ed;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 15px;
+}
+
+.vlinks:hover{
+    background-color: #345167;
+
+    color: rgb(255, 255, 255);
+}
+
+
+/* главная */
+.main{
+    width: 80%;
+    background-color: white;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    color: black;
+}
+
+
+
+.line{
+    margin: 3vh 5vh;
+    background-color: cadetblue;
+    border-radius: 50%;
+    height: 3px;
+}
+
+
+
+/* табличка */
+.grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+    padding: 5vh;
+    padding-top: 10vh;
+}
+
+.grid_oner{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(950px, 1fr));
+    justify-content: center;  /* вместо place-items: center */
+    place-items: center;
+    gap: 15px;
+    padding-top: 10vh;
+    max-width: 600px;        /* ограничиваем ширину всей сетки */
+    margin: 0 auto;           /* центрируем сам grid */
+}
+
+.grid_oner > * {
+    width: 100%;              /* карточка тянется на всю ячейку */
+    /* max-width: 600px;         но не больше */
+}
+
+
+.card{
+    padding-bottom: 12px;
+    /* x y размытие дополнительная_плотность цвет */
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.31);
+    border-radius: 25px;
+    /* margin-bottom: 5vh; */
+}
+
+.card img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+    border-radius: 25px;
+    box-shadow: 0px 3px 6px 0 black;
+}
+
+.card p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    display: none;
+}
+
+.card h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    place-items: center;
+}
+
+.card a{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+
+}
+
+.card label{
+    display: flex;
+    justify-content: center;
+}
+/* ^табличка */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 🎞️для видео плеера */
+.modal {
+    display: none; /* по умолчанию скрыто */
+    position: fixed;
+    z-index: 9999; /* поверх всего */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7); /* полупрозрачный фон */
+}
+
+.modal-content {
+    position: relative;
+    margin: 5% auto;
+    padding: 10px;
+    width: 80%;
+    max-width: 800px;
+    background: #000;
+    border-radius: 10px;
+}
+
+.modal-content video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+/* смены темы */
+.lb img{
+    width: 30px;
+    height: 30px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+
+.lb{
+    content: "";
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+}
+
+.body2 .lb .sun  { opacity: 1; }
+.body2 .lb .moon { opacity: 0; }
+
+#yummy{ display: none; }
+
+
+
+#yummy:checked ~ .body2 .main{
+    background-color: rgb(20, 20, 20);
+    color: white;
+}
+
+#yummy:checked ~ .body2{
+    background: linear-gradient(to top, #77b9ed, rgb(25, 25, 25));
+
+}
+
+#yummy:checked ~ .body2 .main .grid_oner .card{
+    box-shadow: 0 1px 6px 0 rgba(255, 255, 255, 0.31);
+}
+
+
+#yummy:checked ~ .body2 .lb .sun{
+    transform: translateY(0) translateX(30px);
+    opacity: 0;
+}
+#yummy:checked ~ .body2 .lb .moon{
+    opacity: 1;
+    transform: translateY(0) translateX(-30px);
+    filter: none;
+
+}
+
+
+
+
+
+
+/* бургем меню */
+#bt{
+    display: none;
+}
+
+.bur-ch{
+    display: none;
+}
+
+
+
+
+@media (max-width:1220px){
+    .grid_oner{
+        /* margin-top: 8vh; */
+        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+        gap: 15px;
+        max-width: 80%;
+        width: 80%;
+    }
+
+}
+
+
+@media (max-width: 972px){
+    .bur-ch{
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 25px;
+    }
+
+    #list, .card h1{
+        display: none;
+    }
+
+    .card p{
+        display: flex;
+    }
+
+    .grid{
+        margin-top: 8vh;
+    }
+
+    .grid_oner{
+        margin-top: 8vh;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 15px;
+        padding: 5vh;
+        max-width: 80%;
+        width: 80%;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    .bur-ch::after, .bur-ch::before, .bur-ch .span{
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: white;
+        transition: all 0.3s ease;
+    }
+
+    .bur-ch::before{
+        content: "";
+        top: 0;
+    }
+
+    .bur-ch .span{
+        top: 11px;
+    }
+
+    .bur-ch::after{
+        content: "";
+        bottom: 0;
+    }
+
+    #bt:checked ~ .bur-ch::before{
+        transform: rotate(-45deg);
+        top: 12px;
+    }
+
+    #bt:checked ~ .bur-ch .span{
+        transform: rotate(-45deg);
+        top: 12px;
+    }
+
+    #bt:checked ~ .bur-ch::after{
+        transform: rotate(45deg);
+        bottom: 10px;
+    }
+
+    #bt:checked ~ #list{
+        display: flex;
+        top: 0;
+        bottom: 0;
+    }
+
+    #list{
+        flex-direction: column;
+        background-color: black;
+        position: fixed;
+        top: -100vh;
+        bottom: 100vh;
+        padding-top: 100px;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        align-items: center;
+        
+    }
+
+}
+
+@media (max-width: 472px){
+    .main{
+        width: 95%;
+        color: black;
+    }
+
+    .body{
+        padding-bottom: 25px;
+    }
+    .navigation{
+        width: 80%;
+    }
+
+    .grid{
+        padding: 0;
+    }
+
+    
+
+    .modal-content {
+        top: 20%;
+    }
+
+
+}
+
+
+
+
+

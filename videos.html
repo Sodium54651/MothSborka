@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sytle.css">
+    <!-- <link rel="" href="sytle.css"> -->
+    <link rel="icon" href="img/icon.webp">
+
+    <title>Видео библиотека</title>
+</head>
+
+
+
+<script src="videoplayer.js"></script>
+
+  
+
+
+<body>
+<input type="checkbox" id="yummy">
+<div class="body2">
+
+
+
+
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+        <span class="close">&times;</span>
+        <video id="videoPlayer" controls>
+            <source src="" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+        </video>
+        </div>
+    </div>
+
+
+
+
+
+    <nav class="navigation">
+
+
+        <!-- бургер меню -->
+        <input type="checkbox" id="bt">
+        <label for="bt" class="bur-ch">
+            <span  class="span"></span>
+        </label>
+
+
+
+
+        <!-- менюшка ссылочек -->
+        <label for="yummy" class="lb">
+            <img src="img/SumMoonTheme/sun.webp" alt="☀️" class="sun">
+            <img src="img/SumMoonTheme/moon.webp" alt="🌙" class="moon">
+        </label>
+
+        <div id="list">
+            <a class="links" href="index.html">Главная</a>
+            <a class="links" href="main.html">Осноная</a>
+            <a class="links" href="oldsite/work.html">Обучение</a>
+            <a class="links" href="videos.html">🎞️Печеньки</a>
+        </div>
+        <input type="text" placeholder="Поиск">
+    </nav>
+
+
+    <!-- главная  -->
+    <div class="main">
+            <!-- табличка -->
+        <div class="grid">
+
+            <div class="card">
+                <img src="vdeoLib/Sacura trick/pictrack/1.webp">
+                <a class="vlinks" href="vdeoLib/Sacura trick/Юдзу Изука - аниме девочка танцует.mp4">смотреть</a>
+            </div>
+            
+            <div class="card">
+                <img src="img/1.webp">
+                <p>важное извещание</p>
+            </div>
+
+            <div class="card">
+                <img src="img/1.webp">
+                <p>важное извращение</p>
+            </div>
+
+            <div class="card">
+                <img src="img/1.webp">
+                <p>важное извещание</p>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+</body>
+</html>

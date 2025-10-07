@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>мыша</title>
+
+  <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+  <script src="no-borrow-mouse.js"></script>
+
+  <style>
+    body {
+      background-color: #77b9ed;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #animation_container {
+      width: 100%;
+      height: auto;
+      max-width: 640px;         /* ограничение для больших экранов */
+      margin: 40px auto 20px;  
+       /* сверху и снизу отступы */
+      position: relative;
+      display: block;
+    }
+
+    
+    #canvas,
+    #dom_overlay_container {
+      width: 100% !important;
+      height: auto !important;
+      display: block;
+    }
+
+    h1, h3 {
+      text-align: center;
+      margin: 10px 0;
+    }
+
+    /* маленькие экраны типа iPhone SE */
+    @media (max-width: 360px) {
+      h1 {
+        font-size: 20px;
+      }
+      h3 {
+        font-size: 14px;
+      }
+      #animation_container {
+        margin: 20px auto 10px;
+      }
+    }
+  </style>
+
+  <script>
+    var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+    function init() {
+      canvas = document.getElementById("canvas");
+      anim_container = document.getElementById("animation_container");
+      dom_overlay_container = document.getElementById("dom_overlay_container");
+      var comp=AdobeAn.getComposition("A6C3759941583547B1F247CFCD151EDA");
+      var lib=comp.getLibrary();
+      handleComplete({},comp);
+    }
+    function handleComplete(evt,comp) {
+      var lib=comp.getLibrary();
+      var ss=comp.getSpriteSheet();
+      exportRoot = new lib.мышкаспокойна_HTML5Canvas();
+      stage = new lib.Stage(canvas);	
+      fnStartAnimation = function() {
+        stage.addChild(exportRoot);
+        createjs.Ticker.framerate = lib.properties.fps;
+        createjs.Ticker.addEventListener("tick", stage);
+      }	    
+      AdobeAn.makeResponsive(true,'both',true,1,[canvas,anim_container,dom_overlay_container]);	
+      AdobeAn.compositionLoaded(lib.properties.id);
+      fnStartAnimation();
+    }
+  </script>
+</head>
+<body onload="init();">
+
+  <div id="animation_container">
+    <canvas id="canvas" width="640" height="480"></canvas>
+    <div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:640px; height:480px;"></div>
+  </div>
+
+  <h1>Ошибка: 404</h1>
+  <h3>RH – мы работаем над этим</h3>
+
+</body>
+</html>

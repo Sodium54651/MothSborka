@@ -1,0 +1,50 @@
+.rh{
+    display: flex;
+    justify-content: space-between;
+    padding: 5% 10% 0 10%;
+}
+.main-image{
+    width: 25%;
+    height: 25%;
+    display: block;
+    margin-left: 200px;
+}
+.logotipe{
+    height: 35%;
+    width: 35%;
+    display: block;
+}
+.flutt{
+    justify-content: center;
+    height: 25%;
+    width: 25%;
+    display: block;
+}
+
+.main{
+    padding: 5% 5% 10% 5%;
+}
+
+
+.libriry{                                           /* сама формочка */
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    padding: 2%;
+    color: black;
+    justify-content: center;
+}
+
+.images{                                        /* вствочные изображения */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    padding-bottom: 4%;
+}
+
+.discribe{                          /* описание текст для описания  */
+    background-color: white;
+    width: 30%;
+    color: black;
+}
