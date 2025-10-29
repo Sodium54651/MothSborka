@@ -148,6 +148,7 @@ html, body {
     font-weight: 700;
     display: flex;
     justify-content: center;
+    padding: 8px;
 }
 
 .card h1{
@@ -169,6 +170,7 @@ html, body {
 .card label{
     display: flex;
     justify-content: center;
+    padding: 8px;
 }
 /* ^табличка */
 
